@@ -21,11 +21,11 @@ func getCurrentTimeStamp() {
 
 // 2. 时间戳转换为日期字符串
 func convertTimeStampToDateStr() {
-	// 2.1 生成当前时间戳并转成字符串
+	// 2.1 生成当前日期，时间
 	date1 := time.Now().Format("2006-01-02 15:04:05")
 	date2 := time.Now().Format("2006/01/02 15:04:05")
-
-	fmt.Printf("date1: %s\ndate2: %s\n", date1, date2)
+	date4 := time.Now().Format("2006-01-02")
+	fmt.Printf("date1: %s\ndate2: %s\ndate4: %s\n", date1, date2, date4)
 	// 2.2 将某个时间戳转成日期字符串
 	timeStamp := 1572244341
 	t := time.Unix(int64(timeStamp), 0)
@@ -60,18 +60,4 @@ func getCurrentDateStr() {
 	timeStr := time.Now().String()
 	fmt.Println("Time Now:", timeStr)
 
-}
-
-func init() {
-	// 1. 获取当前时间戳
-	getCurrentTimeStamp()
-
-	// 2. 时间戳转换为日期字符串
-	convertTimeStampToDateStr()
-
-	// 3. 日期字符串转换为时间戳
-	convertDateStrToTimeStamp()
-
-	// 4. 获取当期的时间字符串（2019-10-26 23:18:00）
-	getCurrentDateStr()
 }
